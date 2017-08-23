@@ -6,14 +6,25 @@ import Header from './Header';
 
 describe('Header', () => {
   it('renders without crashing', () => {
-    throw 'TODO';
+    const div = document.createElement('div');
+    ReactDOM.render(<Header />, div);
   });
 
   it('should render properly', () => {
-    throw 'TODO';
+    const output = shallow(<Header title="Unit Tests" />);
+    expect(shallowToJson(output)).toMatchSnapshot();
   });
 
   it('should handle a click event', () => {
-    throw 'TODO';
+    let props = {
+      onHeaderClick: jest.fn(),
+      title: 'Unit Tests'
+    };
+
+    const output = mount(<Header {...props} />);
+    const anchorTag = output.find('#logo');
+    anchorTag.simulate('click');
+    expect(props.onHeaderClick).toHaveBeenCalled();
   });
 });
+
