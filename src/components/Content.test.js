@@ -16,5 +16,12 @@ describe('<Content>', () => {
     const output = shallow(<Content text="Unit Tests" setTitle={setTitle} />);
     expect(shallowToJson(output)).toMatchSnapshot();
   });
+
+  it('should set the title of its parent', () => {
+    let setTitle = jest.fn();
+    const output = mount(<Content text="Unit Tests" setTitle={setTitle} />);
+    output.find('button').simulate('click');
+    expect(setTitle).toHaveBeenCalled();
+  })
 });
 
