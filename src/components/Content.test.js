@@ -7,11 +7,13 @@ import Content from './Content';
 describe('<Content>', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Content />, div);
+    let setTitle = jest.fn();
+    ReactDOM.render(<Content setTitle={setTitle} />, div);
   });
 
   it('properly shows given text', () => {
-    const output = shallow(<Content text="Unit Tests" />);
+    let setTitle = jest.fn();
+    const output = shallow(<Content text="Unit Tests" setTitle={setTitle} />);
     expect(shallowToJson(output)).toMatchSnapshot();
   });
 });

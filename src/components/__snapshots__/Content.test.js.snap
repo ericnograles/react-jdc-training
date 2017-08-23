@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Content> properly shows given text 1`] = `
-<p
-  className="App-intro"
->
-  Unit Tests
-</p>
+<Content
+  setTitle={[Function]}
+  text="Unit Tests"
+/>
 `;
