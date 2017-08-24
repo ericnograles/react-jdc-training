@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<About> properly shows given text 1`] = `
+<ReactComponent
+  setTitle={[Function]}
+  text="Welcome to /about"
+/>
+`;

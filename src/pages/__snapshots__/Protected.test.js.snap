@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Protected> properly shows given text 1`] = `
+<div>
+  <p
+    className="App-intro"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Logout
+    </button>
+  </p>
+</div>
+`;
