@@ -2,6 +2,9 @@
   "name": "react-jdc-training",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "8.1.4"
+  },
   "dependencies": {
     "express": "^4.15.4",
     "heroku-node-settings": "^1.1.0",
