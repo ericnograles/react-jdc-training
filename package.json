@@ -22,7 +22,7 @@
     "winston": "^2.3.1"
   },
   "scripts": {
-    "develop": "./node_modules/.bin/npm-run-all -p watch-css develop-react",
+    "develop": "REACT_APP_REDUX_DEBUGGING_ENABLED=true ./node_modules/.bin/npm-run-all -p watch-css develop-react",
     "start": "./node_modules/.bin/heroku-node-settings index.js",
     "build": "react-scripts build",
     "heroku-postbuild": "npm rebuild node-sass && npm run build-css && ./node_modules/.bin/react-scripts build",
