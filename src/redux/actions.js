@@ -7,16 +7,14 @@ export const ProfileActions = {
 // Action thunks
 export function retrieveProfileFromToken(accessToken) {
   return (dispatch, store) => {
-    setTimeout(() => {
-      dispatch({
-        type: ProfileActions.RECEIVE_PROFILE,
-        profile: {
-          firstName: 'TODO: firstName',
-          lastName: 'TODO: lastName',
-          email: 'TODO: email'
-        }
-      });
-    }, 500);
+    return dispatch({
+      type: ProfileActions.RECEIVE_PROFILE,
+      profile: {
+        firstName: 'TODO: firstName',
+        lastName: 'TODO: lastName',
+        email: 'TODO: email'
+      }
+    });
   };
 }
 

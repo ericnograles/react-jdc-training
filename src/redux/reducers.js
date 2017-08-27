@@ -7,7 +7,7 @@ const initialStateProfile = {
 };
 
 // Individual reducers
-const profile = (state = initialStateProfile, action) => {
+export const profile = (state = initialStateProfile, action) => {
   switch (action.type) {
     case ActionTypes.ProfileActions.RECEIVE_PROFILE:
       return retrieveProfileFromToken(state, action);
