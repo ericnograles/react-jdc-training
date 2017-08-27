@@ -7,20 +7,26 @@ import Protected from './Protected';
 describe('<Protected>', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    let logout = jest.fn();
-    ReactDOM.render(<Protected logout={logout} />, div);
+    let actions = {
+      logout: jest.fn()
+    };
+    ReactDOM.render(<Protected actions={actions} />, div);
   });
 
   it('properly shows given text', () => {
-    let logout = jest.fn();
-    const output = shallow(<Protected logout={logout} />);
+    let actions = {
+      logout: jest.fn()
+    };
+    const output = shallow(<Protected actions={actions} />);
     expect(shallowToJson(output)).toMatchSnapshot();
   });
 
   it('should log out', () => {
-    let logout = jest.fn();
-    const output = mount(<Protected logout={logout} />);
+    let actions = {
+      logout: jest.fn()
+    };
+    const output = mount(<Protected actions={actions} />);
     output.find('button').simulate('click');
-    expect(logout).toHaveBeenCalled();
+    expect(actions.logout).toHaveBeenCalled();
   });
 });

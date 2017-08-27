@@ -27,6 +27,7 @@
     "build": "react-scripts build",
     "heroku-postbuild": "npm rebuild node-sass && npm run build-css && ./node_modules/.bin/react-scripts build",
     "test": "CI=true ./node_modules/.bin/react-scripts test --env=jsdom ./src/*.test.js",
+    "test:watch": "./node_modules/.bin/react-scripts test --env=jsdom ./src/*.test.js",
     "eject": "react-scripts eject",
     "build-css": "./node_modules/.bin/node-sass src/ -o src/",
     "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",

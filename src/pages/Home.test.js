@@ -8,6 +8,9 @@ describe('<Home>', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     let login = jest.fn();
+    let profile = {
+      isAuthenticated: false
+    };
     let auth = {
       isAuthenticated: false
     };
@@ -15,21 +18,21 @@ describe('<Home>', () => {
       state: { from: '/protected' }
     };
     ReactDOM.render(
-      <Home login={login} auth={auth} location={location} />,
+      <Home login={login} profile={profile} location={location} />,
       div
     );
   });
 
   it('properly shows login when not authenticated', () => {
     let login = jest.fn();
-    let auth = {
+    let profile = {
       isAuthenticated: false
     };
     let location = {
       state: { from: '/protected' }
     };
     const output = shallow(
-      <Home login={login} auth={auth} location={location} />
+      <Home login={login} profile={profile} location={location} />
     );
     expect(shallowToJson(output)).toMatchSnapshot();
   });
