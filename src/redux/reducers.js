@@ -11,6 +11,8 @@ const profile = (state = initialStateProfile, action) => {
   switch (action.type) {
     case ActionTypes.ProfileActions.RECEIVE_PROFILE:
       return retrieveProfileFromToken(state, action);
+    case ActionTypes.ProfileActions.LOGOUT:
+      return initialStateProfile;
     default:
       return state;
   }
